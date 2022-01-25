@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Eclipse
+.settings/
+  
+# Mac
+.DS_Store
+
+# Maven
+log/
