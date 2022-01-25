@@ -34,7 +34,7 @@ build/
 
 # Eclipse
 .settings/
-  
+
 # Mac
 .DS_Store
 
