@@ -4,6 +4,7 @@ package application.processor;
 import application.exceptions.InvalidInputException;
 import application.model.Photo;
 import application.services.ConnectionService;
+import application.services.ResponseService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import java.util.stream.Collectors;
 public class PhotoAlbumProcessor {
 
     private final ConnectionService connectionService = new ConnectionService();
-
+    private final ResponseService responseService = new ResponseService();
 
     public PhotoAlbumProcessor() throws MalformedURLException {
     }
@@ -70,17 +71,7 @@ public class PhotoAlbumProcessor {
     }
 
     public List<String> processResponse(HttpURLConnection httpURLConnection) throws IOException {
-        String line;
-        StringBuffer rc = new StringBuffer();
-        BufferedReader bufferedReader = (new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream())));
-        while ((line = bufferedReader.readLine()) != null) {
-            rc.append(line);
-        }
-
-        //Couldn't split by ',' so this gives a delimiter between each json string
-        String placeHolder = rc.toString().replaceAll("},","}delim").replace('[',' ').replace(']',' ');
-        List<String> jsonStrings = Arrays.asList(placeHolder.split("delim"));
-        return jsonStrings;
+        return responseService.getResponse(httpURLConnection);
     }
 
     public List<Photo> processObjectMapper(List<String> response, long albumIdFilter) throws JsonProcessingException {
