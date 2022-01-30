@@ -16,11 +16,16 @@ public class ConnectionService {
     public ConnectionService() throws MalformedURLException {
     }
 
-    public HttpURLConnection setupConnection() throws IOException {
-        HttpURLConnection  urlConnection = (HttpURLConnection) url.openConnection();
-        urlConnection.setRequestMethod("GET");
-        urlConnection.setConnectTimeout(5000);
-        urlConnection.setReadTimeout(5000);
-        return urlConnection;
+    public HttpURLConnection setupConnection() {
+        try{
+            HttpURLConnection  urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setConnectTimeout(5000);
+            urlConnection.setReadTimeout(5000);
+            return urlConnection;
+        }catch (IOException exception){
+            System.err.println(exception.getMessage());
+        }
+        return null;
     }
 }
