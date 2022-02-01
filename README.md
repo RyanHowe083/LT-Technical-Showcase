@@ -19,7 +19,7 @@ Below are details explaining tools needed and steps necessary to build and insta
 
 ### Prerequisites
 In order to build this project you will need to download maven and add it to your class path. Instructions can be found here.
-*[Maven instructions](https://maven.apache.org/install.html)
+* [Maven instructions](https://maven.apache.org/install.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
