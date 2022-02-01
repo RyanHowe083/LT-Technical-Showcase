@@ -17,16 +17,15 @@ public class ResponseService {
     public List<String> getResponse(HttpURLConnection httpURLConnection){
         try{
             String line;
-            StringBuffer rc = new StringBuffer();
+            StringBuilder stringBuilder = new StringBuilder();
             BufferedReader bufferedReader = (new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream())));
             while ((line = bufferedReader.readLine()) != null) {
-                rc.append(line);
+                stringBuilder.append(line);
             }
 
             //Couldn't split by ',' so this gives a delimiter between each json string
-            String placeHolder = rc.toString().replaceAll("},","}delim").replace('[',' ').replace(']',' ');
-            List<String> jsonStrings = Arrays.asList(placeHolder.split("delim"));
-            return jsonStrings;
+            String placeHolder = stringBuilder.toString().replaceAll("},","}delim").replace('[',' ').replace(']',' ');
+            return Arrays.asList(placeHolder.split("delim"));
         }catch (IOException exception){
             System.err.println(exception.getMessage());
         }

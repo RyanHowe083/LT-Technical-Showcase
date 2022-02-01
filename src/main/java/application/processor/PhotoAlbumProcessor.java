@@ -7,18 +7,12 @@ import application.services.ConnectionService;
 import application.services.ResponseService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class PhotoAlbumProcessor {
 
@@ -62,21 +56,21 @@ public class PhotoAlbumProcessor {
 
     public String getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        String userInput = null;
+        String userInput;
         System.out.println("Which album would you like displayed: ");
         userInput = scanner.next();
         return userInput;
     }
 
-    public HttpURLConnection processConnection() throws IOException {
+    public HttpURLConnection processConnection() {
         return connectionService.setupConnection();
     }
 
-    public List<String> processResponse(HttpURLConnection httpURLConnection) throws IOException {
+    public List<String> processResponse(HttpURLConnection httpURLConnection) {
         return responseService.getResponse(httpURLConnection);
     }
 
-    public List<Photo> processObjectMapper(List<String> response, long albumIdFilter) throws JsonProcessingException {
+    public List<Photo> processObjectMapper(List<String> response, long albumIdFilter) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<Photo> photos = new ArrayList<>();
 
