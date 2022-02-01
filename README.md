@@ -33,13 +33,16 @@ Below is an example of how you can install and build the app. The following will
    git clone https://github.com/RyanHowe083/LT-Technical-Showcase.git
    ```
 2. Change directory to project folder
-   ```cd LT-Technical-Showcase
+   ```
+   cd LT-Technical-Showcase
    ```
 3. Run a clean installation of the project`
-   ```mvn clean install
+   ```
+   mvn clean install
    ```
 4. Execute the Jar file
-   ```java -jar target/Photo-Album-0.0.1-SNAPSHOT.jar
+   ```
+   java -jar target/Photo-Album-0.0.1-SNAPSHOT.jar
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
