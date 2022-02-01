@@ -26,20 +26,20 @@ In order to build this project you will need to download maven and add it to you
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Below is an example of how you can install and build the app. The following will done in your choice of terminal window
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/RyanHowe083/LT-Technical-Showcase.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+2. Change directory to project folder
+   ```cd LT-Technical-Showcase
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run a clean installation of the project`
+   ```mvn clean install
+   ```
+4. Execute the Jar file
+   ```java -jar target/Photo-Album-0.0.1-SNAPSHOT.jar
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -49,8 +49,8 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+When running the application the user will be displayed with the option to choose a photo album to be displayed or to hit q to quit. Any input other than q or numbers 1-100 will result in the application terminating.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
