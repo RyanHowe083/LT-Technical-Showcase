@@ -10,8 +10,8 @@ import java.net.URL;
 @Service
 public class ConnectionService {
 
-    private static final String urlString = "https://jsonplaceholder.typicode.com/photos";
-    private final URL url = new URL(urlString);
+    public static final String urlString = "https://jsonplaceholder.typicode.com/photos";
+    public final URL url = new URL(urlString);
 
     public ConnectionService() throws MalformedURLException {
     }

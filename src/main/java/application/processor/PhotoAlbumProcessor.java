@@ -33,7 +33,8 @@ public class PhotoAlbumProcessor {
         System.out.println("Enter q to end.");
         Long userInput = processUserInput();
         if (userInput == null || userInput.equals(-1L)) {
-            System.exit(-1);
+//            System.out.println("Invalid input: please enter a number between 1-100.");
+            return -1;
         }
         return userInput;
     }
@@ -44,7 +45,8 @@ public class PhotoAlbumProcessor {
             String userInput = getUserInput();
             if (userInput != null && !userInput.equals("q")) {
                 if (Long.parseLong(userInput) < 1 || Long.parseLong(userInput) > 100) {
-                    throw new InvalidInputException("Invalid input: please enter a number between 1-100");
+//                    throw new InvalidInputException("Invalid input: please enter a number between 1-100");
+                    return null;
                 }
                 inputFilter = Long.parseLong(userInput);
             }
