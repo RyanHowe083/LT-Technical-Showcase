@@ -1,6 +1,5 @@
 package application.processor;
 
-import application.PhotoAlbumApplication;
 import application.services.ConnectionService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Spy;
@@ -39,7 +38,7 @@ class PhotoAlbumProcessorTest {
         when(photoAlbumProcessor.processUserInput()).thenReturn(null);
         when(photoAlbumProcessor.processAlbumRequests()).thenCallRealMethod();
 
-        Long expected = PhotoAlbumApplication.EXIT_CODE;
+        Long expected = -1L;
 
         //Act
         long actual = photoAlbumProcessor.processAlbumRequests();
@@ -56,7 +55,7 @@ class PhotoAlbumProcessorTest {
         when(photoAlbumProcessor.processUserInput()).thenCallRealMethod();
         when(photoAlbumProcessor.processAlbumRequests()).thenCallRealMethod();
 
-        Long expected = PhotoAlbumApplication.EXIT_CODE;
+        Long expected = -1L;
 
         //Act
         long actual = photoAlbumProcessor.processAlbumRequests();
@@ -73,7 +72,7 @@ class PhotoAlbumProcessorTest {
         when(photoAlbumProcessor.processUserInput()).thenCallRealMethod();
         when(photoAlbumProcessor.processAlbumRequests()).thenCallRealMethod();
 
-        Long expected = PhotoAlbumApplication.EXIT_CODE;
+        Long expected = -1L;
 
         //Act
         long actual = photoAlbumProcessor.processAlbumRequests();
